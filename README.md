@@ -7,9 +7,48 @@ Dewasa ini kemajuan teknologi mengalami perkembangan yang sangat peseat, selain 
 Dalam hal pengembangan model sistem rekomendasi, ada banyak faktor yang bisa menjadi bahan pertimbangan[^5]. Pada sistem rekomendasi produk , faktor-faktor yang dapat menjadi bahan pertimbangan antara lain seperti kategori, rating pengguna, dan review pengguna. Pada proyek ini hanya beberapa model saja yang akan digunakan seperti Model Cosine Similaryty dan K-Nearest Neighbor.
 
 
-## Business Understanding
+## *Business Understanding*
 
-## References
+## *Data Understanding*
+
+## *Data Preparation*
+
+Dataset yang digunakan dalam analisis kali ini adalah [Amazon Sales Dataset](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data) yang merupakan  1000 data penjualan produk Amazon beserta Rating dan Review yang diberikan pengguna yang terdokumentasi melalui platform [kaggle](https://www.kaggle.com/).
+
+Detail dari dataset ini adalah sebagai berikut:
+
+- Dataset terdiri dari 1464 *records* dengan 16 fitur.
+- Dataset terdiri dari 11 data kategori dan 5 data numerik.
+- Data kurang bersih karena ada data yagn seharusnya bertipe data numerik tetapi ditetapkan sebagai kategorikal.
+- Perlu untuk proses pembersihan data.
+
+### Dataset memiliki fitur-fitur sebagai berikut:
+
+- `product_id` - ID produk
+- `product_name` - Nama produk
+- `category` - Kategori produk
+- `discounted_price` - Harga produk setelah diskon.
+- `actual_price` - Harga produk sebelum diskon.
+- `discount_percentage` - Besaran diskon dalam persen
+- `rating` - Rating produk
+- `rating_count` - Jumlah rating yang diberikan kepada produk
+- `about_product` - Deskripsi tentang produk
+- `user_id` - ID user yang memberikan review terhadap produk.
+- `user_name` - Nama user yang telah memberikan rating terhadap produk
+- `review_id` - ID review user
+- `review_title` Review singkat
+- `review_content` - Review panjang
+- `img_link` - Link gambar produk
+- `product_linki` - Link resmi produk.
+
+
+## *Modeling*
+
+## *Evaluation*
+
+## Kesimpulan
+
+## *References*
 [^1]: Henry Februariyanti *"Implementasi Metode Collaborative Filtering untuk Sistem Rekomendasi Penjualan pada Toko Mebel"* 2021, 43-50, doi: [tautan](https://doi.org/10.31294/jki.v9i1.9859.g4873)
 
 [^2]: Esha Alma'arif, dkk. *"Implementasi Algoritma Apriori Untuk Rekomendasi Produk Pada Toko Online"*, Citec Journal, 2020
