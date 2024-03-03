@@ -2,16 +2,43 @@
 
 ## Project Overview
 
-Dewasa ini kemajuan teknologi mengalami perkembangan yang sangat peseat, selain itu di dunia bisnis teknologi mempunyai peranan yang sangat penting. Melalui media internet/website baik pelaku bisnis maupun konsumen dapat melakukan transaksi dengan cara *online* kapanpun dan di mana pun dengan orang-orang di seluruh duniap[^1]. Salah satu bentuk teknologi yang dapat dirasakan manfaatnya oleh banyak orang adalah dengan toko online yang dapat dijangkau dari semua kalangan. Meskipun  banyak muncul toko online baru, teteapi tidak banyak toko online yang mampu bertahan lama, karena persaingan yang sangat ketat. Banyaknya kesalahan dalam pemasaran produk oleh pemilik usaha sehingga mengeluarkan banyak biaya terhadap produk yang belum tentu diminati konsumen[^2]. Sistem rekomendasi dapat menjangkau pengguna yang memang membutuhkan produk dari pemilik usaha dengan mengetahui pola belanja konsumen, seperti preferensi masa lalu, riwayat pembelian dan informasi demografis[^3],[^4].
+Dewasa ini kemajuan teknologi mengalami perkembangan yang sangat peseat, selain itu di dunia bisnis teknologi mempunyai peranan yang sangat penting. Melalui media internet/website baik pelaku bisnis maupun konsumen dapat melakukan transaksi dengan cara *online* kapanpun dan di mana pun dengan orang-orang di seluruh duniap[^1]. Salah satu bentuk teknologi yang dapat dirasakan manfaatnya oleh banyak orang adalah dengan toko online yang dapat dijangkau dari semua kalangan. Meskipun  banyak muncul toko online baru, teteapi tidak banyak toko online yang mampu bertahan lama, karena persaingan yang sangat ketat. Banyaknya kesalahan dalam pemasaran produk oleh pemilik usaha sehingga mengeluarkan banyak biaya terhadap produk yang belum tentu diminati konsumen[^2]. Sistem rekomendasi dapat menjangkau pengguna yang memang membutuhkan produk dari pemilik usaha dengan mengetahui pola belanja konsumen, seperti preferensi masa lalu, riwayat pembelian dan informasi demografis[^3],[^4]. Dengan adanya sistem rekomendasi membuat produk yang ditawarkan pemilik akan dengan lebih mudah dijangkau oleh sasaran pengguna sehingga baik itu pemilik usaha dan konsumen diuntungkan.  
 
 Dalam hal pengembangan model sistem rekomendasi, ada banyak faktor yang bisa menjadi bahan pertimbangan[^5]. Pada sistem rekomendasi produk , faktor-faktor yang dapat menjadi bahan pertimbangan antara lain seperti kategori, rating pengguna, dan review pengguna. Pada proyek ini hanya beberapa model saja yang akan digunakan seperti Model Cosine Similarity dan K-Nearest Neighbor.
 
 
 ## *Business Understanding*
 
-## *Data Understanding*
+Pengembangan model Sistem Rekomendasi Produk memeiliki potensi atau manfaat yang menjadi salah satu alat bantu dalam pengambilan keputusan oleh pengguna aplikasi e-commerce. Contoh potensi manfaat dari Sistem Rekomendasi Produk ini adalah membantu pengguna mendapatkan produk yang dibutuhkan tanpa tenaga ekstra.
 
-## *Data Preparation*
+### Problem Statements
+
+Berdasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan sistem yang dapat memberikan rekomendasi terhadap pengguna dengan menjawab permasalahan berikut:
+
+- Berapa rata-rata rating untuk setiap kategori produk?
+- Produk apa yang memiliki jumlah rating terbanyak di setiap kategori?
+- Bagaimana hubungan distribusi antara harga diskon dengan harganya aslinya?
+- Bagaimana perubahan rata-rata diskon di setiap kategori?
+- Produk apa yang paling populer?
+- Apa keyword produk yang paling populer?
+- Apa produk yang memiliki review paling populer?
+- Apa kolerasi antara diskon produk dengan rating?
+- 5 Kategori apa saja yang paling teratas dengan rating tertinggi?
+- Bagaimana mengolah *dataset* agar model sistem rekomendasi dapat berjalan dengan baik?
+- Bagaimana membuat model sistem rekomendasi cosine similarity dan K-Nearest Neighbor?
+- Bagaimana mengukur performa model sistem rekomendasi yang telah dibangun? 
+
+### Goals
+Berdasarkan problem statement di atas maka tujuan dari pengembangan sistem rekomendasi adalah sebagai berikut:
+
+- Mengetahui rata-rata rating untuk setiap kategori produk.
+- Mengetahui produk yang memiliki jumlah rating terbanyak di setiap kategori.
+- Mengetahui hubungan distribusi antara harga diskon dengan harga aslinya.
+- Mengetahui perubahan rata-rata diskon di setiap kategori.
+
+### Solution Statements
+
+## *Data Understanding*
 
 Dataset yang digunakan dalam analisis kali ini adalah [Amazon Sales Dataset](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data) yang merupakan  1000 data penjualan produk Amazon beserta Rating dan Review yang diberikan pengguna yang terdokumentasi melalui platform [kaggle](https://www.kaggle.com/).
 
@@ -40,6 +67,10 @@ Detail dari dataset ini adalah sebagai berikut:
 - `review_content` - Review panjang
 - `img_link` - Link gambar produk
 - `product_linki` - Link resmi produk.
+
+
+## *Data Preparation*
+
 
 
 ## *Modeling*
