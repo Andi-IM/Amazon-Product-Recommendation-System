@@ -75,8 +75,25 @@ Detail dari dataset ini adalah sebagai berikut:
 - `img_link` - Link gambar produk
 - `product_linki` - Link resmi produk.
 
+### *Explanatory Data Analysis* (EDA)
+
+Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (Explanatory Data Analysis) atau disingkat EDA[^6]. 
+
 
 ## *Data Preparation*
+
+*Data preparation* atau *data preprocessing* adalah teknik digunakan untuk mengubah data mendah ke dalam format yang berguna dan efisien[^7]. Fungsi utama dari *data preparation* adalah untuk memastikan bahwa data mentah yang akan diproses sudah akurat yang berimplikasi pada hasil analitik yang valid. Proses *data preparation* dilakukan empat tahap persiapan data, yaitu Data Ingestion, Data Cleaning, dan Data Formating. Pada tahap *Data Ingestion*, berikut beberapa pengecekan yang dilakukan:
+
+- Mengimpor data dari format csv ke bentuk DataFrame dengan library Pandas.
+- Membaca informasi data.
+- Mencari duplikasi data.
+- Mencari *missing value* atau nilai yang hilang.
+
+Pada tahap *Data Cleaning*, ada beberapa metode yang digunakan yaitu:
+
+- Membuang data yang memiliki nilai-nilai yang hilang (*Dropping*)
+- Mengisi niali-nilai yang hilang (*Imputation*)
+- Interpolasi menghasilkan titik-titik data baru dalam janngkauan suatu data.
 
 
 
@@ -97,4 +114,10 @@ Detail dari dataset ini adalah sebagai berikut:
 [^4]: Munawar dkk/ *"Meningkatkan Rekomendasi Menggunakan Algoritma Perbedaan Topik"* . J-SIKA| Jurnal Sistem Informasi Karya Anak Bangsa, 02(02), 17–26. Diambil dari [tautan](https://ejournal.unibba.ac.id/index.php/j-sika/article/view/378).
 
 [^5]: Mohamed, Marwa & Khafagy, Mohamed & Ibrahim, Mohamed. (2019). Recommender Systems Challenges and Solutions Survey. 10.1109/ITCE.2019.8646645.
+
+[^6]: C. Chatfield, “Exploratory data analysis,” European Journal of Operational Research, vol. 23, no. 1, pp. 5–13, Jan. 1986, doi: https://doi.org/10.1016/0377-2217(86)90209-2.
+
+[^7]: Laraswati. (2022). Tahapan Data Preparation agar Data Lebih Mudah Diproses, diakses pada tanggal 28 Februari 2024, https://blog.algorit.ma/data-preparation/ 
+
+
 
