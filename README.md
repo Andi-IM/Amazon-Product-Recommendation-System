@@ -92,7 +92,7 @@ Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui meto
 Pada tahap *Data Cleaning*, ada beberapa metode yang digunakan yaitu:
 
 - Membuang data yang memiliki nilai-nilai yang hilang (*Dropping*)
-- Mengisi niali-nilai yang hilang (*Imputation*)
+- Mengisi nilai-nilai yang hilang (*Imputation*)
 - Interpolasi menghasilkan titik-titik data baru dalam janngkauan suatu data.
 
 
