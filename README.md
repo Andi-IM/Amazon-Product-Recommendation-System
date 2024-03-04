@@ -73,7 +73,7 @@ Detail dari dataset ini adalah sebagai berikut:
 - `review_title` Review singkat
 - `review_content` - Review panjang
 - `img_link` - Link gambar produk
-- `product_linki` - Link resmi produk.
+- `product_link` - Link resmi produk.
 
 ### *Explanatory Data Analysis* (EDA)
 
