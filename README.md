@@ -29,14 +29,21 @@ Berdasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan sistem
 - Bagaimana mengukur performa model sistem rekomendasi yang telah dibangun? 
 
 ### Goals
-Berdasarkan problem statement di atas maka tujuan dari pengembangan sistem rekomendasi adalah sebagai berikut:
+Berdasarkan *problem statement* di atas maka tujuan dari pengembangan sistem rekomendasi adalah sebagai berikut:
 
 - Mengetahui rata-rata rating untuk setiap kategori produk.
 - Mengetahui produk yang memiliki jumlah rating terbanyak di setiap kategori.
 - Mengetahui hubungan distribusi antara harga diskon dengan harga aslinya.
 - Mengetahui perubahan rata-rata diskon di setiap kategori.
 
-### Solution Statements
+### Solution Approach
+
+Dari *Problem Statement* dan *Goals* yang telah dideskripsikan, maka didapatkan solusi sebagai berikut:
+
+- Mengekplorasi fitur yang terdapat pada dataset dengan menggunakan teknik analisis univariat dan multivariat. Analisis univariat digunakan untuk melihat hubungan data. Analisis multivariat untuk melihat hubungan antar fitur. Analisis univariat dan multivariat dapat dengan mudah dipaahami melalui visualisasi.
+- Mempersiapkan data yang akan digunakan meliputi *Data Ingesting*, *Data Cleaning*, dan *Data Formating*.
+- Mengekplorasi model rekomendasi sesuai dengan *behavior* rekomendasi yang diinginkan, dalam kasus ini menggunakan metode Content Based Filtering dan Colaborative Filtering.
+- Mengevaluasi model yang telah dikembangkan dengan metrik evaluasi model.
 
 ## *Data Understanding*
 
