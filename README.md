@@ -77,7 +77,76 @@ Detail dari dataset ini adalah sebagai berikut:
 
 ### *Explanatory Data Analysis* (EDA)
 
-Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (Explanatory Data Analysis) atau disingkat EDA[^6]. 
+Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (Explanatory Data Analysis) atau disingkat EDA[^6]. Berikut ini adalah hasil EDA dengan menggunakan analisis multivariat.
+
+#### Hubungan antara Harga Asli dan Rating
+
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/8ba42a25-1b08-4b38-b88b-3e190176f01f"></p>
+<p align="center">Gambar 1. Scattterplot persebaran harga produk dengan diskon yang diberikan</p>
+
+Dari gambar di atas dapat dilihat distribusi harga merapat dari 0 hingga 80000 rupee memiliki rating terbanyak di sekitaran 4.0 hingga 4.5
+
+#### Distribusi harga produk
+
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/1a0bbbc3-f9b3-4097-8e1d-b032edbd3a07"></p>
+<p align="center">Gambar 2. Distribusi persebaran harga produk</p>
+
+Dari gambar 2 dapat dilihat bahwa produk yang ditayangkan tergolong produk murah di bawah 20000 rupee.
+
+## Rata-rata rating untuk setiap produk
+
+Tabel 1. Rata-rata rating untuk setiap produk.
+
+|index|category|rating|
+|---|---|---|
+|0|Car&Motorbike&#124;CarAccessories&#124;InteriorAccessories&#124;AirPurifiers&Ionizers|3\.8|
+|1|Computers&Accessories&#124;Accessories&Peripherals&#124;Adapters&#124;USBtoUSBAdapters|4\.15|
+|2|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCHeadsets|3\.5|
+|3|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCMicrophones|3\.5999999999999996|
+|4|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCSpeakers|4\.05|
+|5|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;Webcams&VoIPEquipment&#124;Webcams|4\.199999999999999|
+|6|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;CableConnectionProtectors|4\.033333333333333|
+|7|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;DVICables|4\.4|
+|8|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;EthernetCables|4\.4|
+|9|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;SATACables|3\.9|
+
+Dari tabel 1 dapat dilihat bahwa sebagian besar produk memiliki rating positif di atas 3.5. Namun juga terdapat beberapa yang memiliki rating rendah dan memungkinkan untuk evaluasi seperti pemberian diskon atau promo tertentu.
+
+#### Produk dengan rating terbanyak tiap kategori
+
+Tabel 2. Produk dengan rating terbanyak tiap kategori.
+
+|index|product\_id|category|rating|rating\_count|
+|---|---|---|---|---|
+|0|B0912WJ87V|Car&Motorbike&#124;CarAccessories&#124;InteriorAccessories&#124;AirPurifiers&Ionizers|3\.8|1118\.0|
+|1|B097C564GC|Computers&Accessories&#124;Accessories&Peripherals&#124;Adapters&#124;USBtoUSBAdapters|4\.3|4426\.0|
+|2|B094DQWV9B|Computers&Accessories&#124;Accessories&Peripherals&#124;Adapters&#124;USBtoUSBAdapters|4\.0|1540\.0|
+|3|B009LJ2BXA|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCHeadsets|3\.5|7222\.0|
+|4|B08SCCG9D4|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCMicrophones|3\.9|14969\.0|
+|5|B08HD7JQHX|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCMicrophones|3\.3|2804\.0|
+|6|B08K9PX15C|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCSpeakers|4\.0|7352\.0|
+|7|B08SBH499M|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCSpeakers|4\.1|5195\.0|
+|8|B008QS9J6Y|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;Webcams&VoIPEquipment&#124;Webcams|4\.3|20398\.0|
+|9|B09P22HXH6|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;Webcams&VoIPEquipment&#124;Webcams|4\.1|10976\.0|
+
+Dari tabel 2 dapat dilihat:
+
+- Suatu produk dapat populer dengan kategorinya berdasarkan `jumlah rating terbanyak`, membuat pengguna tertarik dan ingin melihat.
+- Jumlah review dari `q ke 15867`, menyiratkan berbagai level atensi dan umpan balik terhadap suatu produk.
+- Daftar produk yang memililki `rating di atas 3.5` mengindikasikan pengalmaan pengguna yang positif.
+- Produk dengan `julmah review` tertinggi di kategorinya berpotensi menjadi top seller meskipun tanpa melalui data penjualan secara langsung.
+
+#### Distribusi antara harga diskon dengan harga aslinya
+
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/6b301de5-ab8e-4020-9917-8819266c01e8"></p>
+<p align="center">Gambar 3. Distribusi persebaran harga produk</p>
+
+Berdasarkan gambar 3 dapat dilihat bahwa:
+
+- Harga diskon secara umum lebih rendah dari harga asliny, dengan median harga diskon 200 rupee dan harga asli 400 rupee.
+- Distribusi persentase diskon miring ke kiri (left-skewed), dengan produk yang terbanyak diberi diskon sebesar 30% atau lebih rendah.
+- Output menyarankan untuk lebih berpeluang untung dengan meningkatkan persentase diskon atau harga diskon untuk mendatangkan lebih banyak pelanggan.
+
 
 
 ## *Data Preparation*
