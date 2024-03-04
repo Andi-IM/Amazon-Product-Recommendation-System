@@ -99,9 +99,18 @@ Pada tahap *Data Cleaning*, ada beberapa metode yang digunakan yaitu:
 
 ## *Modeling*
 
+Kasus yang sedang dipahami pada proyek ini adalah mencari sentimen dari data produk untuk dapat menjangkau ke pengguna yang mungkin tertarik dengan produk yang ditampilkan pada sistem. Sehingga tahapan yang akan dilakukan pada modeling adalah:
+
+- Menganalisis Sentimen
+- Membuat model prediksi rekomendasi berdasarkan sentimen dan kemiripan antar fitur.
+
 ## *Evaluation*
 
+
+
 ## Kesimpulan
+
+Dari hasil evaluasi di atas, maka dapat disimpulkan bahwa:
 
 ## *References*
 
