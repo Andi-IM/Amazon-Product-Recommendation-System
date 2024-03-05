@@ -172,10 +172,22 @@ Pada tahap *Data Cleaning*, ada beberapa metode yang digunakan yaitu:
 
 ## *Modeling*
 
-Kasus yang sedang dipahami pada proyek ini adalah mencari sentimen dari data produk untuk dapat menjangkau ke pengguna yang mungkin tertarik dengan produk yang ditampilkan pada sistem. Sehingga tahapan yang akan dilakukan pada modeling adalah:
+Seperti yang dijelaskan sebelumnya, model sistem rekomendasi dibangun dengan pendekatan Content-based filtering dan Collaborative filtering. Pada content-based filtering, algoritma akan memberikan rekomendasi berdasarkan hal yang serupa dengan konten yang disukai oleh pengguna di masa lalu. Sebagai contoh, misalkan ada seorang pengguna yang menonton film "The Avengers" melalui platform streaming online, lalu algoritma ini akan memberikan rekomendasi film yang memiliki genre yang sama, katakanlah genre Action. Informasi yang didapatkan akan disimpan berdasarkan vektor. Vektor ini berisi kebiasaan pengguna, seperti film yang disuka dan tidak disuka dan rating yang diberikan. Vektor ini dinamakan vektor profil. Semua informasi disimpan dalam vektor lain disebut sebagai vektor item. Vektor tersebut dikalkuklasikan dengan persamaan cosine similarity berikut:
 
-- Menganalisis Sentimen
-- Membuat model prediksi rekomendasi berdasarkan sentimen dan kemiripan antar fitur.
+$$ sim(A, B) = cos(\theta) = \frac{A . B}{||A||||B||} $$
+
+Pada collaborative filtering, algoritma berfokus pada pendapat komunitas penggujna. Pada *user-based collaborative filtering*, algoritma akan melihat kesamaan selera pengguna. Katakanlah Galih dan Ratna memberikan rating tertinggi untuk sejumlah film action. Jika Galih menyukai film The Avengers, Ratna juga kemungkinan akan menyukai film tersebut. 
+
+<p align="center"><img src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:4234dba104aca84b9b1f2affdb625b8c20210912135018.png"></p>
+<p align="center">Gambar X. User-based Collaborative Filtering</p>
+
+Pendekatan content-based filtering dan collaborative filtering dikombinasikan dan dinamakan sebagai sistem rekomendasi pendekatan hybrid. 
+
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/d51d2a22-4051-4696-b243-e013fdca4994"></p>
+<p align="center">Gambar XI. Sistem Rekomendasi Hybrid</p>
+
+Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan mengurutkannya berdasarkan rating yang diberikan. 
+
 
 ## *Evaluation*
 
