@@ -209,7 +209,7 @@ Dapat dilihat produk yang memiliki review negatif tetap diberikan rating 4.3.
 
 ## *Data Preparation*
 
-*Data preparation* atau *data preprocessing* adalah teknik digunakan untuk mengubah data mendah ke dalam format yang berguna dan efisien[^7]. Fungsi utama dari *data preparation* adalah untuk memastikan bahwa data mentah yang akan diproses sudah akurat yang berimplikasi pada hasil analitik yang valid. Proses *data preparation* dilakukan empat tahap persiapan data, yaitu Data Ingestion, Data Cleaning, dan Data Formating. Pada tahap *Data Ingestion*, berikut beberapa pengecekan yang dilakukan:
+*Data preparation* atau *data preprocessing* adalah teknik digunakan untuk mengubah data mendah ke dalam format yang berguna dan efisien[^7]. Fungsi utama dari *data preparation* adalah untuk memastikan bahwa data mentah yang akan diproses sudah akurat yang berimplikasi pada hasil analitik yang valid. Proses *data preparation* dilakukan empat tahap persiapan data, yaitu *Data Ingestion*, *Data Cleaning*, dan *Data Formating*. Pada tahap *Data Ingestion*, berikut beberapa pengecekan yang dilakukan:
 
 - Mengimpor data dari format csv ke bentuk DataFrame dengan library Pandas.
 - Membaca informasi data.
@@ -265,9 +265,7 @@ Data yang hilang ini dapat dihapus dengan menggunakan fungsi `drop` agar tidak m
 Name: rating, dtype: int64
 ```
 
-
-
-
+Data dengan nilai yang aneh juga dihilangkan dengan mengeliminasi baris yang memiliki nilai yang aneh. Dengan membersihkan data dan memahami pola data yang disajikan maka dapat dilakukan seleksi fitur, *encoding* dan dimulai pengembangan model pada tahap selanjutnya. 
 
 ## *Modeling*
 
@@ -342,7 +340,7 @@ Dapat dilihat, produk dengan subkategori `USB Cable` menjadi rekomendasi karena 
 
 ### Collaborative Filtering
 
-Evaluasi metrik yang dapat digunakan untuk mengukur kinerja model ini adalah metrik RMSE (*Root Mean Squared Error*). RMSE adalah metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi [^X]. RMSE dapat dijabarkan melalui pendekatan rumus berikut ini
+Evaluasi metrik yang dapat digunakan untuk mengukur kinerja model ini adalah metrik RMSE (*Root Mean Squared Error*). RMSE adalah metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi [^9]. RMSE dapat dijabarkan melalui pendekatan rumus berikut ini
 
 $$ RMSE =  \sqrt{\frac{\sum_{t=1}^{n}(A_t - F_t)^2}{n}} $$
 
@@ -381,8 +379,7 @@ Dari hasil evaluasi di atas, maka dapat disimpulkan bahwa:
 
 [^8]: Laraswati. (2022). Tahapan Data Preparation agar Data Lebih Mudah Diproses, diakses pada tanggal 28 Februari 2024, https://blog.algorit.ma/data-preparation/ 
 
-Paling belakang 
-[^X]: Zach, "How to Interpret Root Mean Square Error (RMSE)" (2021) Diambil dari [tautan](https://www.statology.org/how-to-interpret-rmse/)
+[^9]: Zach, "How to Interpret Root Mean Square Error (RMSE)" (2021) Diambil dari [tautan](https://www.statology.org/how-to-interpret-rmse/)
 
 
 
