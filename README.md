@@ -284,12 +284,12 @@ Sistem rekomendasi dengan model collaborative filtering memiliki kelebihan denga
 Pada collaborative filtering, algoritma berfokus pada pendapat komunitas pengguna. Pada *user-based collaborative filtering*, algoritma akan melihat kesamaan selera pengguna. Katakanlah Galih dan Ratna memberikan rating tertinggi untuk sejumlah film action. Jika Galih menyukai film The Avengers, Ratna juga kemungkinan akan menyukai film tersebut. 
 
 <p align="center"><img src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:4234dba104aca84b9b1f2affdb625b8c20210912135018.png"></p>
-<p align="center">Gambar X. User-based Collaborative Filtering</p>
+<p align="center">Gambar 9. User-based Collaborative Filtering</p>
 
 Sistem rekomendasi dengan collaborative filtering memiliki kemampuan untuk menjangkau produk yang beragam, namun akan menjadi masalah jika menerapkan sistem rekomendasi ini pada tahap awal pengembangan produk. Sehingga solusi dari permasalahan ini adalah menggunakan pendekatan *hybrid*. Pendekatan content-based filtering dan collaborative filtering dikombinasikan atau pendekatan *hybrid* akan meberikan hasil rekomendasi yang baik tanpa khawatir dengan keandalan sistem untuk awal pengembangan. 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/d51d2a22-4051-4696-b243-e013fdca4994"></p>
-<p align="center">Gambar XI. Sistem Rekomendasi Hybrid</p>
+<p align="center">Gambar 10. Sistem Rekomendasi Hybrid</p>
 
 Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan mengurutkannya berdasarkan rating yang diberikan. 
 
@@ -299,7 +299,7 @@ Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem r
 
 Kedua model akan diuji dengan data produk sampel dengan id `B07JW9H4J1` untuk dilihat kemampuannya seperti yang dapat dilihat pada Tabel 3 berikut ini.
 
-**Tabel 3. Produk dengan ID `B07JW9H4J1`**
+**Tabel 4. Produk dengan ID `B07JW9H4J1`**
 
 |index|product\_id|product\_name|category|sub\_category|
 |---|---|---|---|---|
@@ -321,7 +321,7 @@ Dimana:
 Melalui rumus di atas maka berikut ini hasil pengujian dari ketiga bentuk sistem rekomendasi jika menginputkan sampel `B07JW9H4J1`:
 Model rekomendasi Content-based Filtering akan memberikan rekomendasi berdasarkan kategori seperti tabel 3 berikut ini.
 
-Tabel 3. Produk hasil rekomendasi dengan metode *Content-based Filtering*
+Tabel 5. Produk hasil rekomendasi dengan metode *Content-based Filtering*
 
 |index|product\_name|category|sub\_category|
 |---|---|---|---|
@@ -353,13 +353,14 @@ Dimana:
 Collaborative Filtering dengan model RecommenderNet memberikan hasil training yang divisualisasikan melalui gambar di bawah ini: 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/f119f22c-b5e5-49bb-9c0d-ab17bd180667"></p>
-<p align="center">Gambar XX. Hasil Evaluasi Model RecommenderNet</p>
+<p align="center">Gambar 11. Hasil Evaluasi Model RecommenderNet</p>
 
 Dengan epoch sebanyak 100, model ini memberikan nilai error akhir 0.3 untuk training dan 0.19 untuk test. 
 
 ## Kesimpulan
 
 Dari hasil evaluasi di atas, maka dapat disimpulkan bahwa:
+
 
 ## *References*
 
