@@ -338,7 +338,7 @@ Tabel 5. Produk hasil rekomendasi dengan metode *Content-based Filtering*
 
 Dapat dilihat, produk dengan subkategori `USB Cable` menjadi rekomendasi karena kategori pada produk dengan id `B07JW9H4J1` juga merupakan produk dengan subkategori yang sama. Dapat dipastikan presisi dari model ini 100%.
 
-### Collaborative Filtering
+### Pengujian Model *Collaborative Filtering*
 
 Evaluasi metrik yang dapat digunakan untuk mengukur kinerja model ini adalah metrik RMSE (*Root Mean Squared Error*). RMSE adalah metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi [^9]. RMSE dapat dijabarkan melalui pendekatan rumus berikut ini
 
