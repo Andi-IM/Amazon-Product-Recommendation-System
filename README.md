@@ -295,7 +295,7 @@ Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan men
 
 ## *Evaluation*
 
-Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem rekomendasi yang digunakan. Untuk model dengan Content Based Filtering, performa akan dihitung berdasarkan seberapa cocok produk yang direokmendasikan dengan kategorinya. Sedangkan Collaborative filtering akan menggunakan metrik pengukuran model based, contohnya RMSE. Untuk hybrid tidak dilakukan pengecekan karena metode ini gabungan dari keduanya, jika keduanya memiliki hasil yang bagus, maka hybrid akan memberikan rekomendasi bagus pula. 
+Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem rekomendasi yang digunakan. Untuk model dengan *Content-based Filtering*, performa akan dihitung berdasarkan seberapa cocok produk yang direokmendasikan dengan kategorinya. Sedangkan *Collaborative filtering* akan menggunakan metrik pengukuran *model based*, contohnya RMSE. Untuk pendekatan *hybrid* tidak dilakukan pengecekan karena metode ini gabungan dari keduanya, jika keduanya memiliki hasil yang bagus, maka model *hybrid* akan memberikan rekomendasi bagus pula. 
 
 Kedua model akan diuji dengan data produk sampel dengan id `B07JW9H4J1` untuk dilihat kemampuannya seperti yang dapat dilihat pada Tabel 3 berikut ini.
 
