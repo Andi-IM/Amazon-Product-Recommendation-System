@@ -267,7 +267,7 @@ Name: rating, dtype: int64
 
 Data dengan nilai yang aneh juga dihilangkan dengan mengeliminasi baris yang memiliki nilai yang aneh. Dengan membersihkan data dan memahami pola data yang disajikan maka dapat dilakukan seleksi fitur, *encoding* dan dimulai pengembangan model pada tahap selanjutnya. 
 
-## *Modeling*
+## *Modeling and Result*
 
 Seperti yang dijelaskan sebelumnya, model sistem rekomendasi dibangun dengan pendekatan Content-based filtering dan Collaborative filtering. Pada content-based filtering, algoritma akan memberikan rekomendasi berdasarkan hal yang serupa dengan konten yang disukai oleh pengguna di masa lalu. Sebagai contoh, misalkan ada seorang pengguna yang menonton film "The Avengers" melalui platform streaming online, lalu algoritma ini akan memberikan rekomendasi film yang memiliki genre yang sama, katakanlah genre Action. Informasi yang didapatkan akan disimpan berdasarkan vektor. Vektor ini berisi kebiasaan pengguna, seperti film yang disuka dan tidak disuka dan rating yang diberikan. Vektor ini dinamakan vektor profil. Semua informasi disimpan dalam vektor lain disebut sebagai vektor item. Vektor tersebut dikalkuklasikan dengan persamaan cosine similarity berikut:
 
@@ -291,13 +291,7 @@ Sistem rekomendasi dengan collaborative filtering memiliki kemampuan untuk menja
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/d51d2a22-4051-4696-b243-e013fdca4994"></p>
 <p align="center">Gambar 10. Sistem Rekomendasi Hybrid</p>
 
-Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan mengurutkannya berdasarkan rating yang diberikan. 
-
-## *Evaluation*
-
-Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem rekomendasi yang digunakan. Untuk model dengan *Content-based Filtering*, performa akan dihitung berdasarkan seberapa cocok produk yang direokmendasikan dengan kategorinya. Sedangkan *Collaborative filtering* akan menggunakan metrik pengukuran *model based*, contohnya RMSE. Untuk pendekatan *hybrid* tidak dilakukan pengecekan karena metode ini gabungan dari keduanya, jika keduanya memiliki hasil yang bagus, maka model *hybrid* akan memberikan rekomendasi bagus pula. 
-
-Kedua model akan diuji dengan data produk sampel dengan id `B07JW9H4J1` untuk dilihat kemampuannya seperti yang dapat dilihat pada Tabel 3 berikut ini.
+Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan mengurutkannya berdasarkan rating yang diberikan. Kedua model akan diuji dengan data produk sampel dengan id `B07JW9H4J1` untuk dilihat kemampuannya seperti yang dapat dilihat pada Tabel 3 berikut ini.
 
 **Tabel 4. Produk dengan ID `B07JW9H4J1`**
 
@@ -307,19 +301,7 @@ Kedua model akan diuji dengan data produk sampel dengan id `B07JW9H4J1` untuk di
 |369|B07JW9H4J1|Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
 |614|B07JW9H4J1|Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
 
-### Pengujian Model *Content Based Filtering*
-
-Model ini hanya menggunakan metrik Precision untuk mengetahui seberapa baik perforam model tersebut. Presisi adalah metrik yang biasa digunakan untuk mengevaluasi kinerja model pengelompokan. Metrik ini menghitung rasio antara nilai *ground truth* (nilai sebenarnya) dengan nilai prediksi yang positf. Perhitungan rasio ini dijabarkan melalui rumus di bawah ini:
-
-$$ Precision = \frac{TP}{TP + FP} $$
-
-Dimana:
-
-- TP (*True Positive*), jumlah kejadian positif yang diprediksi dengan benar.
-- FP (*False Positive*), jumlah kejadian positif yang diprediksi dengan salah.
-
-Melalui rumus di atas maka berikut ini hasil pengujian dari ketiga bentuk sistem rekomendasi jika menginputkan sampel `B07JW9H4J1`:
-Model rekomendasi Content-based Filtering akan memberikan rekomendasi berdasarkan kategori seperti tabel 3 berikut ini.
+Model rekomendasi *Content-based Filtering* akan memberikan rekomendasi berdasarkan kategori seperti tabel 3 berikut ini.
 
 Tabel 5. Produk hasil rekomendasi dengan metode *Content-based Filtering*
 
@@ -336,7 +318,63 @@ Tabel 5. Produk hasil rekomendasi dengan metode *Content-based Filtering*
 |208|MYVN LTG to USB for Fast Charging & Data Sync USB Cable Compatible for iPhone 5/5s/6/6S/7/7+/8/8+/10/11, iPad Air/Mini, iPod and iOS Devices \(1 M\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
 |78|SWAPKART Fast Charging Cable and Data Sync USB Cable Compatible for iPhone 6/6S/7/7+/8/8+/10/11, 12, 13 Pro max iPad Air/Mini, iPod and iOS Devices \(White\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
 
-Dapat dilihat, produk dengan subkategori `USB Cable` menjadi rekomendasi karena kategori pada produk dengan id `B07JW9H4J1` juga merupakan produk dengan subkategori yang sama. Dapat dipastikan presisi dari model ini 100%.
+Dapat dilihat, produk dengan subkategori `USB Cable` menjadi rekomendasi karena kategori pada produk dengan id `B07JW9H4J1` juga merupakan produk dengan kategori yang sama.
+
+Berikut ini juga merupakan hasil rekomendasi dengan metode *Collaborative Filtering*:
+
+Tabel 6 Hasil rekomendasi metode *Collaborative Filtering*
+
+|index|product\_name|category|sub\_category|rating|
+|---|---|---|---|---|
+|174|Syncwire LTG to USB Cable for Fast Charging Compatible with Phone 5/ 5C/ 5S/ 6/ 6S/ 7/8/ X/XR/XS Max/ 11/12/ 13 Series and Pad Air/Mini, Pod & Other Devices \(1\.1 Meter, White\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|5\.0|
+|249|Sony Bravia 164 cm \(65 inches\) 4K Ultra HD Smart LED Google TV KD-65X74K \(Black\)|Electronics&#124;HomeTheater,TV&Video&#124;Televisions&#124;SmartTelevisions|SmartTelevisions|4\.7|
+|459|Spigen EZ Fit Tempered Glass Screen Protector for iPhone 14 Pro Max - 2 Pack \(Sensor Protection\)|Electronics&#124;Mobiles&Accessories&#124;MobileAccessories&#124;Maintenance,Upkeep&Repairs&#124;ScreenProtectors|ScreenProtectors|4\.7|
+|775|Amazon Basics Wireless Mouse &#124; 2\.4 GHz Connection, 1600 DPI &#124; Type - C Adapter &#124; Upto 12 Months of Battery Life &#124; Ambidextrous Design &#124; Suitable for PC/Mac/Laptop|Computers&Accessories&#124;Accessories&Peripherals&#124;Keyboards,Mice&InputDevices&#124;Mice|Mice|5\.0|
+|820|Redgear MP35 Speed-Type Gaming Mousepad \(Black/Red\)|Computers&Accessories&#124;Accessories&Peripherals&#124;PCGamingPeripherals&#124;Gamepads|Gamepads|4\.6|
+|886|Logitech M331 Silent Plus Wireless Mouse, 2\.4GHz with USB Nano Receiver, 1000 DPI Optical Tracking, 3 Buttons, 24 Month Life Battery, PC/Mac/Laptop - Black|Computers&Accessories&#124;Accessories&Peripherals&#124;Keyboards,Mice&InputDevices&#124;Mice|Mice|4\.6|
+|1201|Oratech Coffee Frother electric, milk frother electric, coffee beater, cappuccino maker, Coffee Foamer, Mocktail Mixer, Coffee Foam Maker, coffee whisker electric, Froth Maker, coffee stirrers electric, coffee frothers, Coffee Blender, \(6 Month Warranty\) \(Multicolour\)|Home&Kitchen&#124;Kitchen&HomeAppliances&#124;SmallKitchenAppliances&#124;HandBlenders|HandBlenders|4\.8|
+|1223|FIGMENT Handheld Milk Frother Rechargeable, 3-Speed Electric Frother for Coffee with 2 Whisks and Coffee Decoration Tool, Coffee Frother Mixer, CRESCENT ENTERPRISES VRW0\.50BK \(A1\)|Home&Kitchen&#124;Kitchen&HomeAppliances&#124;SmallKitchenAppliances&#124;HandBlenders|HandBlenders|4\.7|
+|1299|Instant Pot Air Fryer, Vortex 2QT, Touch Control Panel, 360° EvenCrisp™ Technology, Uses 95 % less Oil, 4-in-1 Appliance: Air Fry, Roast, Bake, Reheat \(Vortex 1\.97Litre, Black\)|Home&Kitchen&#124;Kitchen&HomeAppliances&#124;SmallKitchenAppliances&#124;DeepFatFryers&#124;AirFryers|AirFryers|4\.8|
+|1388|Campfire Spring Chef Prolix Instant Portable Water Heater Geyser 1Ltr\. for Use Home Stainless Steel Baking Rack &#124; Restaurant &#124; Office &#124; Labs &#124; Clinics &#124; Saloon &#124; with Installation Kit \(With MCB\)|Home&Kitchen&#124;Heating,Cooling&AirQuality&#124;WaterHeaters&Geysers&#124;InstantWaterHeaters|InstantWaterHeaters|4\.7|
+
+Hasil rekomendasi dengan collaborative filtering akan memberikan rekomendasi berdasarkan rating yang diberikan oleh seseorang, sehingga memberikan rekomendasi dengan rating yang mirip atau lebih baik.
+
+Sementara itu, gabungan dari metode ini akan menghasilkan rekomendasi seperti apda tabel 7 berikut ini:
+
+Tabel 7. Hasil rekomendasi dengan menggunakan kedua metode
+
+|index|product\_id|product\_name|category|sub\_category|rating|
+|---|---|---|---|---|---|
+|777|B016XVRKZM|APC Back-UPS BX600C-IN 600VA / 360W, 230V, UPS System, an Ideal Power Backup & Protection for Home Office, Desktop PC & Home Electronics|Computers&Accessories&#124;Accessories&Peripherals&#124;UninterruptedPowerSupplies|UninterruptedPowerSupplies|3\.9|
+|1302|B009UORDX4|Philips Hi113 1000-Watt Plastic Body Ptfe Coating Dry Iron, Pack of 1|Home&Kitchen&#124;Kitchen&HomeAppliances&#124;Vacuum,Cleaning&Ironing&#124;Irons,Steamers&Accessories&#124;Irons&#124;DryIrons|DryIrons|4\.3|
+|166|B07JPJJZ2H|Wayona Nylon Braided Lightning USB Data Sync & 3A Charging Cable for iPhones, iPad Air, iPad Mini, iPod Nano and iPod Touch \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|4\.2|
+|42|B07JW1Y6XV|Wayona Nylon Braided 3A Lightning to USB A Syncing and Fast Charging Data Cable for iPhone, Ipad \(3 FT Pack of 1, Black\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|4\.2|
+|174|B0BP7XLX48|Syncwire LTG to USB Cable for Fast Charging Compatible with Phone 5/ 5C/ 5S/ 6/ 6S/ 7/8/ X/XR/XS Max/ 11/12/ 13 Series and Pad Air/Mini, Pod & Other Devices \(1\.1 Meter, White\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|5\.0|
+|1203|B07NKNBTT3|Pick Ur Needs® Lint Remover for Clothes High Range Rechargeable Lint Shaver for All Types of Clothes, Fabrics, Blanket with 1 Extra Blade Multicolor \(Rechargeable\)|Home&Kitchen&#124;Kitchen&HomeAppliances&#124;Vacuum,Cleaning&Ironing&#124;Irons,Steamers&Accessories&#124;LintShavers|LintShavers|4\.1|
+|822|B00MUTWLW4|Logitech K480 Wireless Multi-Device Keyboard for Windows, macOS, iPadOS, Android or Chrome OS, Bluetooth, Compact, Compatible with PC, Mac, Laptop, Smartphone, Tablet - Black|Computers&Accessories&#124;Accessories&Peripherals&#124;Keyboards,Mice&InputDevices&#124;Keyboards|Keyboards|4\.4|
+|1225|B09SZ5TWHW|Swiss Military VC03 Wireless Car Vacuum Cleaner &#124; Wireless Vacuum Cleaner for Home, Car, Living Room &#124; Wireless Vacuum Cleaner Dust Collection/Lighting Car Pet Hair Vacuum with Powerful Motor|Home&Kitchen&#124;Kitchen&HomeAppliances&#124;Vacuum,Cleaning&Ironing&#124;Vacuums&FloorCare&#124;Vacuums&#124;HandheldVacuums|HandheldVacuums|3\.9|
+|461|B0971DWFDT|Portronics CarPower Mini Car Charger with Dual Output, Fast Charging \(Type C PD 18W + QC 3\.0A\) Compatible with All Smartphones\(Black\)|Electronics&#124;Mobiles&Accessories&#124;MobileAccessories&#124;Chargers&#124;AutomobileChargers|AutomobileChargers|4\.2|
+|78|B0B2DJDCPX|SWAPKART Fast Charging Cable and Data Sync USB Cable Compatible for iPhone 6/6S/7/7+/8/8+/10/11, 12, 13 Pro max iPad Air/Mini, iPod and iOS Devices \(White\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|3\.9|
+
+Model ini akan memberikan rekomendasi berdasarkan kategori dan rating yang sesuai dengan yang pengguna berikan sebelumnya. 
+
+
+## *Evaluation*
+
+Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem rekomendasi yang digunakan. Untuk model dengan *Content-based Filtering*, performa akan dihitung berdasarkan seberapa cocok produk yang direokmendasikan dengan kategorinya. Sedangkan *Collaborative filtering* akan menggunakan metrik pengukuran *model based*, contohnya RMSE. Untuk pendekatan *hybrid* tidak dilakukan pengecekan karena metode ini gabungan dari keduanya, jika keduanya memiliki hasil yang bagus, maka model *hybrid* akan memberikan rekomendasi bagus pula. 
+
+### Pengujian Model *Content Based Filtering*
+
+Model ini hanya menggunakan metrik Precision untuk mengetahui seberapa baik perforam model tersebut. Presisi adalah metrik yang biasa digunakan untuk mengevaluasi kinerja model pengelompokan. Metrik ini menghitung rasio antara nilai *ground truth* (nilai sebenarnya) dengan nilai prediksi yang positf. Perhitungan rasio ini dijabarkan melalui rumus di bawah ini:
+
+$$ Precision = \frac{TP}{TP + FP} $$
+
+Dimana:
+
+- TP (*True Positive*), jumlah kejadian positif yang diprediksi dengan benar.
+- FP (*False Positive*), jumlah kejadian positif yang diprediksi dengan salah.
+
+Berdasarkan hasil yang dikeluarkan berdasarkan tabel 5 dapat dilihat bahwasanya besar presisi jika dihitung adalah 10/10 untuk rekomendasi Top-10. Ini menunjukan sistem mampu memberikan rekomendasi sesuai dengan kategorinya.  
 
 ### Pengujian Model *Collaborative Filtering*
 
