@@ -196,7 +196,6 @@ Sistem rekomendasi dengan collaborative filtering memiliki kemampuan untuk menja
 
 Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan mengurutkannya berdasarkan rating yang diberikan. 
 
-
 ## *Evaluation*
 
 Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem rekomendasi yang digunakan. Untuk model dengan Content Based Filtering, performa akan dihitung berdasarkan seberapa cocok produk yang direokmendasikan dengan kategorinya. Sedangkan Collaborative filtering akan menggunakan metrik pengukuran model based, contohnya RMSE. Untuk hybrid tidak dilakukan pengecekan karena metode ini gabungan dari keduanya, jika keduanya memiliki hasil yang bagus, maka hybrid akan memberikan rekomendasi bagus pula. 
@@ -244,9 +243,22 @@ Dapat dilihat, produk dengan subkategori `USB Cable` menjadi rekomendasi karena 
 
 ### Collaborative Filtering
 
-Evaluasi metrik yang dapat digunakan untuk mengukur kinerja model ini adalah metrik RMSE (*Root Mean Squared Error*). RMSE adalah metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi [^X].
+Evaluasi metrik yang dapat digunakan untuk mengukur kinerja model ini adalah metrik RMSE (*Root Mean Squared Error*). RMSE adalah metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi [^X]. RMSE dapat dijabarkan melalui pendekatan rumus berikut ini
 
+$$ RMSE =  \sqrt{\frac{\sum_{t=1}^{n}(A_t - F_t)^2}{n}} $$
 
+Dimana:
+
+- $$ A_t$$: Nilai aktual
+- $$ F_t$$: Nilai hasil prediksi
+- n: Banyak data
+
+Collaborative Filtering dengan model RecommenderNet memberikan hasil training yang divisualisasikan melalui gambar di bawah ini: 
+
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/f119f22c-b5e5-49bb-9c0d-ab17bd180667"></p>
+<p align="center">Gambar XX. Hasil Evaluasi Model RecommenderNet</p>
+
+Dengan epoch sebanyak 100, model ini memberikan nilai error akhir 0.3 untuk training dan 0.19 untuk test. 
 
 ## Kesimpulan
 
