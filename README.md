@@ -83,74 +83,110 @@ Detail dari dataset ini adalah sebagai berikut:
 
 Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (Explanatory Data Analysis) atau disingkat EDA[^6]. Berikut ini adalah hasil EDA dengan menggunakan analisis multivariat.
 
-#### Hubungan antara Harga Asli dan Rating
+#### Distribusi produk di setiap kategori
 
-<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/8ba42a25-1b08-4b38-b88b-3e190176f01f"></p>
-<p align="center">Gambar 1. Scattterplot persebaran harga produk dengan diskon yang diberikan</p>
+Fitur `category` dipecah menjadi `main_category` dan `sub_cateogry` untuk mempermudah analisis sehingga didapat insight seperti pada Gambar 1 dan 2. 
 
-Dari gambar di atas dapat dilihat distribusi harga merapat dari 0 hingga 80000 rupee memiliki rating terbanyak di sekitaran 4.0 hingga 4.5
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/26574d3a-c31f-43f7-9395-db213734bb3a"></p>
+<p align="center">Gambar 1. Distribusi produk pada kategori utama</p>
 
-#### Distribusi harga produk
+Dari Gambar 1 diperoleh beberapa insight:
 
-<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/1a0bbbc3-f9b3-4097-8e1d-b032edbd3a07"></p>
-<p align="center">Gambar 2. Distribusi persebaran harga produk</p>
+- Tiga kategori teratas adalah `Electronics`, `Computer & Accessories`, dan `Home & Kitchen`. Hal ini memperlihatkan barang-barang tersebut adalah yang terpopuler di antara pelanggan.
+- Jumlah produk di `main categories` lainnya cukup sedikit, menunjukkan bahwa kategori tersebut tidak sepopuler tiga kategori teratas.
+- `Office Product`, `Musical Instruments`, `Home Improvement`, `Toys & Games`, `Car & Motorbike` dan `Health & Personal Care` memiliki jumlah produk yang sedikit yang berarti permintaan pada kategori tersebut juga sedikit.
+- Secara keseluruhan, data ini dapat membantu pemahaman bisnis mengenai tren pasar dan mengenali peluang menguntungkan untuk perkembangan di kategori tertentu.
 
-Dari gambar 2 dapat dilihat bahwa produk yang ditayangkan tergolong produk murah di bawah 20000 rupee.
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/438914a9-c957-49d9-a064-4ee665a84dea"></p>
+<p align="center">Gambar 2. Distribusi produk pada sub kategori</p>
 
-## Rata-rata rating untuk setiap produk
+Dari Gambar 2 diperoleh beberapa insight sebagai berikut:
 
-Tabel 1. Rata-rata rating untuk setiap produk.
+- Enam subkategori teratas adalah `USB Cabels`, `Smartwatches`, `Smartphones`, `SmartTelevisions`, `In Ear`, dan `RemoteControls`. Subkategori tersebut merupakan yang terpopuler sehingga bisnis mungkin akan berfokus pada produk-produk tersebut.
+- Subkategori terpopuler lainnya ada `MixerGrinders`, `HDMICables`, `DryIrons`, `Mice`, dan `InstantWaterHeaters`. Subkategori tersebut kurang populer jika dibandingkan dengan enam teratas, namun masih diminati dan ada kebutuhan dengan produk tersebut.
+- Data di atas memperlihatkan keanekaramanan subkategori di 30 teratas meliputi peralatan dapur, barang elektronik rumah, dan aksesoris pribadi. INi memperlihatkan pentingnya untuk menyediakan produk-produk yang bervariasi untuk kebutuhan pelanggan yang berbeda-beda.
+- Secara keseluruhan data tersebut membantu bisnis mengenali subkategori yang populer dan mengatur tawaran produk untuk menjangkau permintaan pelanggan. Dengan fokus pada subkategori tersebut akan membantu meningkatkan penjualan.
 
-|index|category|rating|
-|---|---|---|
-|0|Car&Motorbike&#124;CarAccessories&#124;InteriorAccessories&#124;AirPurifiers&Ionizers|3\.8|
-|1|Computers&Accessories&#124;Accessories&Peripherals&#124;Adapters&#124;USBtoUSBAdapters|4\.15|
-|2|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCHeadsets|3\.5|
-|3|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCMicrophones|3\.5999999999999996|
-|4|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCSpeakers|4\.05|
-|5|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;Webcams&VoIPEquipment&#124;Webcams|4\.199999999999999|
-|6|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;CableConnectionProtectors|4\.033333333333333|
-|7|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;DVICables|4\.4|
-|8|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;EthernetCables|4\.4|
-|9|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;SATACables|3\.9|
+#### Distribusi rating pelanggan.
 
-Dari tabel 1 dapat dilihat bahwa sebagian besar produk memiliki rating positif di atas 3.5. Namun juga terdapat beberapa yang memiliki rating rendah dan memungkinkan untuk evaluasi seperti pemberian diskon atau promo tertentu.
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/fbd70f96-5512-4289-9495-5d46b4d8a4a5"></p>
+<p align="center">Gambar 3. Distribusi rating pelanggan</p>
 
-#### Produk dengan rating terbanyak tiap kategori
+Dari Gambar 3 dapat dilihat bahwa:
 
-Tabel 2. Produk dengan rating terbanyak tiap kategori.
+- Mayoritas pelanggan memberi rating dari 3-4 dan 4-5, dengan total 1453 ulasan.
+- Terdapat peningkatan nyata dalam jumlah ulasan pada rentang 2-3 dibandingkan dengan rentang 0-1 dan 1-2 yang lebih rendah.
+- Jumlah ulasan terendah terdapat pada rentang 0-1, yang menunjukkan bahwa mungkin masih ada ruang untuk perbaikan dalam hal kepuasan pelanggan.
+- Secara keseluruhan, distribusi peringkat pelanggan menunjukkan bahwa sebagian besar pelanggan puas dengan produk, namun mungkin ada peluang perbaikan untuk meningkatkan jumlah peringkat positif.
 
-|index|product\_id|category|rating|rating\_count|
-|---|---|---|---|---|
-|0|B0912WJ87V|Car&Motorbike&#124;CarAccessories&#124;InteriorAccessories&#124;AirPurifiers&Ionizers|3\.8|1118\.0|
-|1|B097C564GC|Computers&Accessories&#124;Accessories&Peripherals&#124;Adapters&#124;USBtoUSBAdapters|4\.3|4426\.0|
-|2|B094DQWV9B|Computers&Accessories&#124;Accessories&Peripherals&#124;Adapters&#124;USBtoUSBAdapters|4\.0|1540\.0|
-|3|B009LJ2BXA|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCHeadsets|3\.5|7222\.0|
-|4|B08SCCG9D4|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCMicrophones|3\.9|14969\.0|
-|5|B08HD7JQHX|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCMicrophones|3\.3|2804\.0|
-|6|B08K9PX15C|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCSpeakers|4\.0|7352\.0|
-|7|B08SBH499M|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;PCSpeakers|4\.1|5195\.0|
-|8|B008QS9J6Y|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;Webcams&VoIPEquipment&#124;Webcams|4\.3|20398\.0|
-|9|B09P22HXH6|Computers&Accessories&#124;Accessories&Peripherals&#124;Audio&VideoAccessories&#124;Webcams&VoIPEquipment&#124;Webcams|4\.1|10976\.0|
+#### Distribusi Rating Berdasarkan Kategori
 
-Dari tabel 2 dapat dilihat:
+Distribusi rating berdasarkan kategori utama dan subkategori untuk melihat pendapat pengalaman yang pengguna dapatkan dengan produk-produk pada kategori utama dan sub kategori.
 
-- Suatu produk dapat populer dengan kategorinya berdasarkan `jumlah rating terbanyak`, membuat pengguna tertarik dan ingin melihat.
-- Jumlah review dari `q ke 15867`, menyiratkan berbagai level atensi dan umpan balik terhadap suatu produk.
-- Daftar produk yang memililki `rating di atas 3.5` mengindikasikan pengalmaan pengguna yang positif.
-- Produk dengan `julmah review` tertinggi di kategorinya berpotensi menjadi top seller meskipun tanpa melalui data penjualan secara langsung.
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/5c379d13-542b-4113-bb84-044c37696550"></p>
+<p align="center">Gambar 4. Distribusi rata-rata rating pelanggan di setiap kategori utama</p>
 
-#### Distribusi antara harga diskon dengan harga aslinya
+Pada Gambar 4 dapat diperoleh informasi:
 
-<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/6b301de5-ab8e-4020-9917-8819266c01e8"></p>
-<p align="center">Gambar 3. Distribusi persebaran harga produk</p>
+- Dapat dilihat kategori utama diurutkan berdasarkan rating rata-ratanya.
+- Kategori dengan rating tertinggi adalah `OfficeProducts`, `Toys&Games`, dan `HomeImprovement` dengan rating di atas 4. Ini menyatakan bahwa pelanggan secara umum suka dengan produk yang ditawarkan pada kategori tersebut.
+- Di sisi lain, kategori utama dengan rating rendah ada `Car&Motorbike`, `MusicalInstruments`,  dan `Health&PersonalCare` dengan rating di bawah 4. Ini berarti perlu adanya perbaikan untuk dapat memenuhi ekspetasi pelanggan.
 
-Berdasarkan gambar 3 dapat dilihat bahwa:
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/8451131e-0387-4503-97f8-d8818b0b76cd"></p>
+<p align="center">Gambar 5. Distribusi rata-rata rating pelanggan di setiap sub kategori</p>
 
-- Harga diskon secara umum lebih rendah dari harga asliny, dengan median harga diskon 200 rupee dan harga asli 400 rupee.
-- Distribusi persentase diskon miring ke kiri (left-skewed), dengan produk yang terbanyak diberi diskon sebesar 30% atau lebih rendah.
-- Output menyarankan untuk lebih berpeluang untung dengan meningkatkan persentase diskon atau harga diskon untuk mendatangkan lebih banyak pelanggan.
+Dari Gambar 5 dapat diperoleh informasi bahwa:
 
+- Dari tabel dapat dilihat rating dari sub kategori dari atas hingga bawah.
+- Produk "tablet", merupakan subkategori teratas dengan rating 4.6 yang berarti pelanggan puas dengan pembeliannya.
+- Namun, subkategori terbawah seperti "Dustcovers" dan "ElectricGrinders", memiliki rating terendah,yang berarti pelanggan tidak begitu puas dengan produk tersebut.
+- Wawasan seperti ini dapat membantu bisnis fokus pada peningkatan kualitas produk mereka dan meningkatkan pengalaman pelanggan secara keseluruhan. Penting untuk melacak umpan balik pelanggan untuk mengidentifikasi area yang perlu ditingkatkan dan terus memenuhi kebutuhan dan harapan mereka.
+
+#### Produk dengan rating terbanyak
+
+Tabel 1. Daftar Produk dengan Rating terbanyak.
+
+|index|main\_category|sub\_category|rating|rating\_count|rating\_weighted|
+|---|---|---|---|---|---|
+|0|Computers&Accessories|Webcams|4\.3|20398\.0|87711\.4|
+|1|Computers&Accessories|PCMicrophones|3\.9|14969\.0|58379\.1|
+|2|Computers&Accessories|Webcams|4\.1|10976\.0|45001\.6|
+|3|Computers&Accessories|PCSpeakers|4\.0|7352\.0|29408\.0|
+|4|Computers&Accessories|PCHeadsets|3\.5|7222\.0|25277\.0|
+|5|Computers&Accessories|PCSpeakers|4\.1|5195\.0|21299\.499999999996|
+|6|Computers&Accessories|USBtoUSBAdapters|4\.3|4426\.0|19031\.8|
+|7|Computers&Accessories|PCMicrophones|3\.3|2804\.0|9253\.199999999999|
+|8|Computers&Accessories|USBtoUSBAdapters|4\.0|1540\.0|6160\.0|
+|9|Car&Motorbike|AirPurifiers&Ionizers|3\.8|1118\.0|4248\.4|
+
+Tabel 1 memberikan informasi bahwa:
+
+- Suatu produk dapat populer dengan kategorinya berdasarkan `jumlah rating` yang banyak, membuat pengguna tertarik dan ingin melihat.
+- Daftar produk yang  memiliki `rating di atas 3.5` mengidikasikan pengalaman pengguna yang positif.
+- Produk dengan `jumlah review` tertinggi di kategorinya berpotensi menjadi top seller meskipun tanpa melalui data penjualan secara langsung.
+
+#### Persentase Diskon di Setiap Kategori
+
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/4bbefbc3-a081-4d60-8cda-a473f214c8ac"></p>
+<p align="center">Gambar 6. Persentase diskon berdasarkan kategori utama</p>
+
+Dari Gambar 6 Dapat dilihat bahwa:
+
+- Kategori `Toys&games` memiliki permintaan yang cukup tinggi dimana penjual tidak perlu secara signifikan memberikan diskon untuk penjualan produk di kategori ini.
+- `Home&Kitchen` dan `Car&Motorbike` mempunyai rata-rata persentase diskon yang serupa, dengan nilai 40% - 42%. Ini menunjukkan bahwa level kompetisi yang sama dengan sensitivitas harga di kedua kategori tersebut.
+- Kategori dengan rata-rata diskon tertinggi adalah `HomeImprovement`, `Computer&Accessories`, dan `Elektronik` dengan nilai 57%, 54%, dan 51%. Ini mengindikasikan bahwa di kategori tersebut memiliki harga sangat sensitif, dan penjual harus lebih aktraktif dalam memberikan diskon untuk dapat berkompetisi lebih efektif.
+- Juga menarik untuk dilihat bahwa, `OfficeProducts` dan `Health&PersonalCare` punya rata-rata diskon 12% dan 53%, yang berarti di antara kedua kategori tersebut merupakan rata-rata diskon terendah dan tertinggi. Hal ini menunjukkan bahwa kategori-kategori ini mungkin memiliki tingkat sensitivitas harga tertentu, namun tidak pada tingkat yang sama dengan `HomeImprovement`, `Computers&Accessories`, dan `Electronics`.
+
+<p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/4bbefbc3-a081-4d60-8cda-a473f214c8ac"></p>
+<p align="center">Gambar 7. Persentase diskon berdasarkan subkategori</p>
+
+Dari grafik di atas dilihat bahwa:
+
+- Tabel diatas memperlihatkan rata-rata diskon tiap subkategori diurutkan secara mundur.
+- Subkategori yang memiliki rata-rata diskon rendah adalah `Basic`, dengan nilai 0.0. Hal ini menyatakan bahwa produk ini adalah produk dengan harga murah dan sederhana, pemberian diskon tidak memberikan efek apa-apa pada produk ini.
+- `BatteryChargers`, `3DGlasses`, dan `BasicMobiles` adalah contoh subkategori dengan persentase diskon rata-rata sedang, dengan nilai antara 0.18 dan 0.25. Hal ini menunjukkan bahwa produk-produk ini mungkin sensitif terhadap harga, namun tidak pada tingkat yang sama dengan produk-produk dalam subkategori persentase diskon rata-rata yang lebih tinggi.
+- `BluetoothSpeakers`, `Bedstand&DeskMounts` dan `BasicCases` adalah contoh subkategori dengan persentase diskon rata-rata tinggi, dengan nilai antara 0.485 dan 0.745. Hal ini menunjukkan bahwa produk-produk ini mungkin lebih sensitif terhadap harga, dan pengecer mungkin perlu menawarkan diskon menarik untuk bersaing secara efektif dalam subkategori ini.
+- Subkategori dengan persentase mean diskon tertinggi adalah Subkategori `Adapter` dengan nilai sebesar 0,803333. Hal ini menunjukkan bahwa persaingan untuk produk-produk tersebut tinggi, dan pengecer harus menawarkan diskon yang signifikan untuk menarik pembeli.
 
 
 ## *Data Preparation*
