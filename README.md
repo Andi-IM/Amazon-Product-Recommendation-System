@@ -9,7 +9,7 @@ Dalam hal pengembangan model sistem rekomendasi, ada banyak faktor yang bisa men
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/94f45723-78da-4800-a8b7-9359a41f1c2c"></p>
 <p align="center">Gambar 1. Alur Proyek Sistem Rekomendsasi</p>
 
-Proses dimulai dari Business Understanding, yaitu tahapan memahami masalah bisnis dan kemudian mrancang solusi analitik berdasarkan data untuk menyelesaikan permasalahan tersebut. Tahapan yang dijelaskan pada tahapan ini meliputi problem statement, goals, dan solution approach. Setelah memahami masalah dan menentukan solusinya, tahapan berlanjut pada Data Understanding dengan melihat infromasi data dan menentukan kualitasnya. Pemahaman data sangat penting untuk menghindari masalah yang tidak terduga pada fase berikutnya, yaitu Data Preparation. Data preparation di proyek ini adalah melakukan cleaning data yang hilang, memeriksa outlier, meng-encode data sehingga dapat diproses model, lalu pada akhirnya membagi data menjadi training dan test sebelum melakukan pemodelan. Pada tahap pemodelan dan evaluasi, dilakukan proses trainng dan melihat ukuran performa dari model untuk menentukan apakah model tersebut baik atau kurang. 
+Proses dimulai dari *Business Understanding*, yaitu tahapan memahami masalah bisnis dan kemudian mrancang solusi analitik berdasarkan data untuk menyelesaikan permasalahan tersebut. Tahapan yang dijelaskan pada tahapan ini meliputi *problem statement*, *goals*, dan *solution approach*. Setelah memahami masalah dan menentukan solusinya, tahapan berlanjut pada *Data Understanding* dengan melihat infromasi data dan menentukan kualitasnya. Pemahaman data sangat penting untuk menghindari masalah yang tidak terduga pada fase berikutnya, yaitu *Data Preparation*. *Data preparation* di proyek ini adalah melakukan *cleaning data* yang hilang dan meng-encode data sehingga dapat diproses model, lalu pada akhirnya membagi data menjadi training dan test sebelum melakukan pemodelan. Pada tahap pemodelan dan evaluasi, dilakukan proses trainng dan melihat ukuran performa dari model untuk menentukan apakah model tersebut baik atau kurang. 
 
 ## *Business Understanding*
 
@@ -19,26 +19,27 @@ Pengembangan model Sistem Rekomendasi Produk memeiliki potensi atau manfaat yang
 
 Berdasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan sistem yang dapat memberikan rekomendasi terhadap pengguna dengan menjawab permasalahan berikut:
 
+- Bagaimana distribusi produk untuk setiap kategori?
 - Berapa rata-rata rating untuk setiap kategori produk?
-- Produk apa yang memiliki jumlah rating terbanyak di setiap kategori?
-- Bagaimana hubungan distribusi antara harga diskon dengan harganya aslinya?
-- Bagaimana perubahan rata-rata diskon di setiap kategori?
-- Produk apa yang paling populer?
-- Apa keyword produk yang paling populer?
-- Apa produk yang memiliki review paling populer?
-- Apa kolerasi antara diskon produk dengan rating?
-- 5 Kategori apa saja yang paling teratas dengan rating tertinggi?
+- Kategori apa saja yang memiliki rating tertinggi?
+- Apa hubungan antara rating dengan jumlah ulasan?  
+- Bagaimana distribusi diskon untuk setiap kategori?
 - Bagaimana mengolah *dataset* agar model sistem rekomendasi dapat berjalan dengan baik?
-- Bagaimana membuat model sistem rekomendasi cosine similarity dan K-Nearest Neighbor?
-- Bagaimana mengukur performa model sistem rekomendasi yang telah dibangun? 
+- Bagaimana membuat model sistem yang dapat memberikan rekomendasi produk?
+- Bagaimana melakukan evaluasi untuk memastikan model yang dibagun dapat digunakan? 
 
 ### Goals
 Berdasarkan *problem statement* di atas maka tujuan dari pengembangan sistem rekomendasi adalah sebagai berikut:
 
-- Mengetahui rata-rata rating untuk setiap kategori produk.
-- Mengetahui produk yang memiliki jumlah rating terbanyak di setiap kategori.
+- Mengetahui distribusi produk untuk setiap kategori.
+- Mengetahui dampak rating dengan keputusan pembelian produk di suatu kategori.
+- Mengetahui dampak jumlah rating dan rating yang diberikan dengan keputusan membeli produk.
+- Mengetahui dampak diskon dengan keputusan pembelian produk di suatu kategori.
 - Mengetahui hubungan distribusi antara harga diskon dengan harga aslinya.
 - Mengetahui perubahan rata-rata diskon di setiap kategori.
+- Mempersiapkan data dengan memilih fitur, melakukan *encoding*, dan membagi data agar dapat dilatih dan memberikan rekomendasi.
+- Mengembangkan model dengan metode *content-based filtering*, *collaborative filtering*, dan memanfaatkan keduanya sekaligus agar dapat memaksimalkan potensi dari kedua model.
+- Menganalisa kemampuan dari kedua metode sistem rekomendasi dengan metrik evaluasi model.
 
 ### Solution Approach
 
@@ -46,7 +47,7 @@ Dari *Problem Statement* dan *Goals* yang telah dideskripsikan, maka didapatkan 
 
 - Mengekplorasi fitur yang terdapat pada dataset dengan menggunakan teknik analisis univariat dan multivariat. Analisis univariat digunakan untuk melihat hubungan data. Analisis multivariat untuk melihat hubungan antar fitur. Analisis univariat dan multivariat dapat dengan mudah dipaahami melalui visualisasi.
 - Mempersiapkan data yang akan digunakan meliputi *Data Ingesting*, *Data Cleaning*, dan *Data Formating*.
-- Mengekplorasi model rekomendasi sesuai dengan *behavior* rekomendasi yang diinginkan, dalam kasus ini menggunakan metode Content Based Filtering dan Colaborative Filtering.
+- Mengekplorasi model rekomendasi sesuai dengan *behavior* rekomendasi yang diinginkan, dalam kasus ini menggunakan metode *Content-based Filtering* dengan mengguanakn pendekatan *cosine similarity* dan *Colaborative Filtering* menggunakan model *deep learning*.
 - Mengevaluasi model yang telah dikembangkan dengan metrik evaluasi model.
 
 ## *Data Understanding*
@@ -220,6 +221,51 @@ Pada tahap *Data Cleaning*, ada beberapa metode yang digunakan yaitu:
 - Membuang data yang memiliki nilai-nilai yang hilang (*Dropping*)
 - Mengisi nilai-nilai yang hilang (*Imputation*)
 - Interpolasi menghasilkan titik-titik data baru dalam janngkauan suatu data.
+
+Ketika menggunakan fungsi `isna().sum()` terdapat 2 baris data yang hilang, yaitu pada fitur rating_count.
+
+Tabel 3. Data yang hilang
+
+|index|rating\_count|
+|---|---|
+|282|NaN|
+|324|NaN|
+
+Data yang hilang ini dapat dihapus dengan menggunakan fungsi `drop` agar tidak mengganggu analisa data. Selain pada fitur rating_count, data yang hilang juga terdapat pada fitur rating.
+
+```
+4.1    244
+4.3    230
+4.2    228
+4.0    129
+3.9    123
+4.4    123
+3.8     86
+4.5     75
+4       52
+3.7     42
+3.6     35
+3.5     26
+4.6     17
+3.3     16
+3.4     10
+4.7      6
+3.1      4
+4.8      3
+3.2      2
+2.8      2
+3.0      2
+5.0      2
+2.3      1
+|        1
+2        1
+3        1
+2.6      1
+2.9      1
+Name: rating, dtype: int64
+```
+
+
 
 
 
