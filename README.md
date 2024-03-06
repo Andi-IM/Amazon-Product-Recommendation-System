@@ -176,12 +176,20 @@ Seperti yang dijelaskan sebelumnya, model sistem rekomendasi dibangun dengan pen
 
 $$ sim(A, B) = cos(\theta) = \frac{A . B}{||A||||B||} $$
 
-Pada collaborative filtering, algoritma berfokus pada pendapat komunitas penggujna. Pada *user-based collaborative filtering*, algoritma akan melihat kesamaan selera pengguna. Katakanlah Galih dan Ratna memberikan rating tertinggi untuk sejumlah film action. Jika Galih menyukai film The Avengers, Ratna juga kemungkinan akan menyukai film tersebut. 
+Dimana:
+
+- A, B menyatakan produk titik dari vektor A dan B
+- ||A|| mewakili norma Euclidean (magnitude) dari vektor A.
+- ||B|| mewakili norma Euclidean (magnitude) dari vektor B.
+
+Sistem rekomendasi dengan model collaborative filtering memiliki kelebihan dengan kemampuannya memberikan rekomendasi yang personal, namun juga memiliki kelemahan untuk memberikan rekomendasi item yang sangat berbeda dari yang telah disukai pengguna.
+
+Pada collaborative filtering, algoritma berfokus pada pendapat komunitas pengguna. Pada *user-based collaborative filtering*, algoritma akan melihat kesamaan selera pengguna. Katakanlah Galih dan Ratna memberikan rating tertinggi untuk sejumlah film action. Jika Galih menyukai film The Avengers, Ratna juga kemungkinan akan menyukai film tersebut. 
 
 <p align="center"><img src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:4234dba104aca84b9b1f2affdb625b8c20210912135018.png"></p>
 <p align="center">Gambar X. User-based Collaborative Filtering</p>
 
-Pendekatan content-based filtering dan collaborative filtering dikombinasikan dan dinamakan sebagai sistem rekomendasi pendekatan hybrid. 
+Sistem rekomendasi dengan collaborative filtering memiliki kemampuan untuk menjangkau produk yang beragam, namun akan menjadi masalah jika menerapkan sistem rekomendasi ini pada tahap awal pengembangan produk. Sehingga solusi dari permasalahan ini adalah menggunakan pendekatan *hybrid*. Pendekatan content-based filtering dan collaborative filtering dikombinasikan atau pendekatan *hybrid* akan meberikan hasil rekomendasi yang baik tanpa khawatir dengan keandalan sistem untuk awal pengembangan. 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/d51d2a22-4051-4696-b243-e013fdca4994"></p>
 <p align="center">Gambar XI. Sistem Rekomendasi Hybrid</p>
@@ -190,6 +198,53 @@ Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan men
 
 
 ## *Evaluation*
+
+Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem rekomendasi yang digunakan. Untuk model dengan Content Based Filtering, performa akan dihitung berdasarkan seberapa cocok produk yang direokmendasikan dengan kategorinya. Sedangkan Collaborative filtering akan menggunakan metrik pengukuran model based, contohnya RMSE. Untuk hybrid tidak dilakukan pengecekan karena metode ini gabungan dari keduanya, jika keduanya memiliki hasil yang bagus, maka hybrid akan memberikan rekomendasi bagus pula. 
+
+Kedua model akan diuji dengan data produk sampel dengan id `B07JW9H4J1` untuk dilihat kemampuannya seperti yang dapat dilihat pada Tabel 3 berikut ini.
+
+**Tabel 3. Produk dengan ID `B07JW9H4J1`**
+
+|index|product\_id|product\_name|category|sub\_category|
+|---|---|---|---|---|
+|0|B07JW9H4J1|Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|369|B07JW9H4J1|Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|614|B07JW9H4J1|Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+
+### Pengujian Model *Content Based Filtering*
+
+Model ini hanya menggunakan metrik Precision untuk mengetahui seberapa baik perforam model tersebut. Presisi adalah metrik yang biasa digunakan untuk mengevaluasi kinerja model pengelompokan. Metrik ini menghitung rasio antara nilai *ground truth* (nilai sebenarnya) dengan nilai prediksi yang positf. Perhitungan rasio ini dijabarkan melalui rumus di bawah ini:
+
+$$ Precision = \frac{TP}{TP + FP} $$
+
+Dimana:
+
+- TP (*True Positive*), jumlah kejadian positif yang diprediksi dengan benar.
+- FP (*False Positive*), jumlah kejadian positif yang diprediksi dengan salah.
+
+Melalui rumus di atas maka berikut ini hasil pengujian dari ketiga bentuk sistem rekomendasi jika menginputkan sampel `B07JW9H4J1`:
+Model rekomendasi Content-based Filtering akan memberikan rekomendasi berdasarkan kategori seperti tabel 3 berikut ini.
+
+Tabel 3. Produk hasil rekomendasi dengan metode *Content-based Filtering*
+
+|index|product\_name|category|sub\_category|
+|---|---|---|---|
+|614|Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|369|Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|220|Wayona Nylon Braided Usb Syncing And Charging Cable Sync And Charging Cable For Iphone, Ipad \(3 Ft, Black\) - Pack Of 2|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|42|Wayona Nylon Braided 3A Lightning to USB A Syncing and Fast Charging Data Cable for iPhone, Ipad \(3 FT Pack of 1, Black\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|89|Wayona Nylon Braided \(2 Pack\) Lightning Fast Usb Data Cable Fast Charger Cord For Iphone, Ipad Tablet \(3 Ft Pack Of 2, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|80|Wayona Usb Nylon Braided Data Sync And Charging Cable For Iphone, Ipad Tablet \(Red, Black\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|106|Wayona Nylon Braided 2M / 6Ft Fast Charge Usb To Lightning Data Sync And Charging Cable For Iphone, Ipad Tablet \(6 Ft Pack Of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|166|Wayona Nylon Braided Lightning USB Data Sync & 3A Charging Cable for iPhones, iPad Air, iPad Mini, iPod Nano and iPod Touch \(3 FT Pack of 1, Grey\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|208|MYVN LTG to USB for Fast Charging & Data Sync USB Cable Compatible for iPhone 5/5s/6/6S/7/7+/8/8+/10/11, iPad Air/Mini, iPod and iOS Devices \(1 M\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+|78|SWAPKART Fast Charging Cable and Data Sync USB Cable Compatible for iPhone 6/6S/7/7+/8/8+/10/11, 12, 13 Pro max iPad Air/Mini, iPod and iOS Devices \(White\)|Computers&Accessories&#124;Accessories&Peripherals&#124;Cables&Accessories&#124;Cables&#124;USBCables|USBCables|
+
+Dapat dilihat, produk dengan subkategori `USB Cable` menjadi rekomendasi karena kategori pada produk dengan id `B07JW9H4J1` juga merupakan produk dengan subkategori yang sama. Dapat dipastikan presisi dari model ini 100%.
+
+### Collaborative Filtering
+
+Evaluasi metrik yang dapat digunakan untuk mengukur kinerja model ini adalah metrik RMSE (*Root Mean Squared Error*). RMSE adalah metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi [^X].
 
 
 
@@ -214,6 +269,9 @@ Dari hasil evaluasi di atas, maka dapat disimpulkan bahwa:
 [^7]: C. Chatfield, “Exploratory data analysis,” European Journal of Operational Research, vol. 23, no. 1, pp. 5–13, Jan. 1986, doi: https://doi.org/10.1016/0377-2217(86)90209-2.
 
 [^8]: Laraswati. (2022). Tahapan Data Preparation agar Data Lebih Mudah Diproses, diakses pada tanggal 28 Februari 2024, https://blog.algorit.ma/data-preparation/ 
+
+Paling belakang 
+[^X]: Zach, "How to Interpret Root Mean Square Error (RMSE)" (2021) Diambil dari [tautan](https://www.statology.org/how-to-interpret-rmse/)
 
 
 
