@@ -361,6 +361,13 @@ Dengan epoch sebanyak 100, model ini memberikan nilai error akhir 0.3 untuk trai
 
 Dari hasil evaluasi di atas, maka dapat disimpulkan bahwa:
 
+- Kategori produk yang populer adalah `Electronics`, `Computer&Accessories`, `Home&Kitchen` dengan subkategorinya, `USB Cabels`, `Smartwatches`, `Smartphones`, `SmartTelevisions`, `InEar` dan `RemoteControls` yang berimpikasi bahwa produk-produk pada kategori tersebut merupakan produk yang paling banyak dicari dan dibeli oleh pelanggan.
+- Rating yang diberikan terhadap produk terbanyak adalah 4-4.5 yang berarti produk yang ditawarkan memberikan kepuasan bagi pelanggan yang membelinya.
+- Secara garis besar, produk yang memilki rating di atas 4 merupakan produk yang berasal dari kategori `OfficeProduk`, `Toys&Games` dan `HomeImprovement` dan jika ditelusur lebih dalam, produk yang memiliki rating di atas 4 rata dari subkategori `Tablets` yang terbanyak.
+- Produk dengan jumlah rating yang diberikan akan membuat pelanggan tertarik dan berminat untuk membeli ataupun tidak membeli produk tersebut selain dengan nilai rating itu sendiri.
+- Sebagian besar review dari produk yang ditawarkan memiliki sentimen positif.
+- Dataset memiliki beberapa data yang hilang dan tidak sesuai dengan tipe datanya sehingga diperlukan perbaikan terlebih dahulu sebelum diproses lebih lanjut.
+- Model dengan pendekatan *content-based filtering* memiliki performa yang baik dengan tingkat presisi 100%. Selain itu dengan pendekatan *collaborative filtering* memiliki nilai metrik RMSE 0.3 untuk *training* dan 0.19 untuk *testing*.   
 
 ## *References*
 
