@@ -47,7 +47,7 @@ Dari *Problem Statement* dan *Goals* yang telah dideskripsikan, maka didapatkan 
 
 - Mengekplorasi fitur yang terdapat pada dataset dengan menggunakan teknik analisis univariat dan multivariat. Analisis univariat digunakan untuk melihat hubungan data. Analisis multivariat untuk melihat hubungan antar fitur. Analisis univariat dan multivariat dapat dengan mudah dipaahami melalui visualisasi.
 - Mempersiapkan data yang akan digunakan meliputi *Data Ingesting*, *Data Cleaning*, dan *Data Formating*.
-- Mengekplorasi model rekomendasi sesuai dengan *behavior* rekomendasi yang diinginkan, dalam kasus ini menggunakan metode *Content-based Filtering* dengan mengguanakn pendekatan *cosine similarity* dan *Colaborative Filtering* menggunakan model *deep learning*.
+- Mengekplorasi model rekomendasi sesuai dengan *behavior* rekomendasi yang diinginkan, dalam kasus ini menggunakan metode *Content-based Filtering* dengan menggunakan pendekatan *cosine similarity* dan *Colaborative Filtering* menggunakan model *deep learning*.
 - Mengevaluasi model yang telah dikembangkan dengan metrik evaluasi model.
 
 ## *Data Understanding*
