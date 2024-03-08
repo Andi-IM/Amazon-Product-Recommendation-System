@@ -82,7 +82,7 @@ Detail dari dataset ini adalah sebagai berikut:
 
 ### *Explanatory Data Analysis* (EDA)
 
-Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (Explanatory Data Analysis) atau disingkat EDA[^6]. Berikut ini adalah hasil EDA dengan menggunakan analisis multivariat.
+Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (Explanatory Data Analysis) atau disingkat EDA[^7]. Berikut ini adalah hasil EDA dengan menggunakan analisis multivariat.
 
 #### Distribusi produk di setiap kategori
 
