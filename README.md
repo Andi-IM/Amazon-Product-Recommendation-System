@@ -269,7 +269,7 @@ Data dengan nilai yang aneh juga dihilangkan dengan mengeliminasi baris yang mem
 
 ## *Modeling and Result*
 
-Seperti yang dijelaskan sebelumnya, model sistem rekomendasi dibangun dengan pendekatan Content-based filtering dan Collaborative filtering. Pada content-based filtering, algoritma akan memberikan rekomendasi berdasarkan hal yang serupa dengan konten yang disukai oleh pengguna di masa lalu. Sebagai contoh, misalkan ada seorang pengguna yang menonton film "The Avengers" melalui platform streaming online, lalu algoritma ini akan memberikan rekomendasi film yang memiliki genre yang sama, katakanlah genre Action. Informasi yang didapatkan akan disimpan berdasarkan vektor. Vektor ini berisi kebiasaan pengguna, seperti film yang disuka dan tidak disuka dan rating yang diberikan. Vektor ini dinamakan vektor profil. Semua informasi disimpan dalam vektor lain disebut sebagai vektor item. Vektor tersebut dikalkuklasikan dengan persamaan cosine similarity berikut:
+Seperti yang dijelaskan sebelumnya, model sistem rekomendasi dibangun dengan pendekatan *Content-based filtering* dan *Collaborative filtering*. Pada *content-based filtering*, algoritma akan memberikan rekomendasi berdasarkan hal yang serupa dengan konten yang disukai oleh pengguna di masa lalu. Sebagai contoh, misalkan ada seorang pengguna yang menonton film "The Avengers" melalui platform streaming online, lalu algoritma ini akan memberikan rekomendasi film yang memiliki genre yang sama, katakanlah genre *Action*. Informasi yang didapatkan akan disimpan berdasarkan vektor. Vektor ini berisi kebiasaan pengguna, seperti film yang disuka dan tidak disuka dan rating yang diberikan. Vektor ini dinamakan vektor profil. Semua informasi disimpan dalam vektor lain disebut sebagai vektor item. Vektor tersebut dikalkuklasikan dengan persamaan *cosine similarity* berikut:
 
 $$ sim(A, B) = cos(\theta) = \frac{A . B}{||A||||B||} $$
 
@@ -279,14 +279,14 @@ Dimana:
 - ||A|| mewakili norma Euclidean (magnitude) dari vektor A.
 - ||B|| mewakili norma Euclidean (magnitude) dari vektor B.
 
-Sistem rekomendasi dengan model collaborative filtering memiliki kelebihan dengan kemampuannya memberikan rekomendasi yang personal, namun juga memiliki kelemahan untuk memberikan rekomendasi item yang sangat berbeda dari yang telah disukai pengguna.
+Sistem rekomendasi dengan model *collaborative filtering* memiliki kelebihan dengan kemampuannya memberikan rekomendasi yang personal, namun juga memiliki kelemahan untuk memberikan rekomendasi item yang sangat berbeda dari yang telah disukai pengguna.
 
-Pada collaborative filtering, algoritma berfokus pada pendapat komunitas pengguna. Pada *user-based collaborative filtering*, algoritma akan melihat kesamaan selera pengguna. Katakanlah Galih dan Ratna memberikan rating tertinggi untuk sejumlah film action. Jika Galih menyukai film The Avengers, Ratna juga kemungkinan akan menyukai film tersebut. 
+Pada metode rekomendasi *collaborative filtering*, algoritma berfokus pada pendapat komunitas pengguna. Pada *user-based collaborative filtering*, algoritma akan melihat kesamaan selera pengguna. Katakanlah Galih dan Ratna memberikan rating tertinggi untuk sejumlah film action. Jika Galih menyukai film The Avengers, Ratna juga kemungkinan akan menyukai film tersebut. 
 
 <p align="center"><img src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:4234dba104aca84b9b1f2affdb625b8c20210912135018.png"></p>
 <p align="center">Gambar 9. User-based Collaborative Filtering</p>
 
-Sistem rekomendasi dengan collaborative filtering memiliki kemampuan untuk menjangkau produk yang beragam, namun akan menjadi masalah jika menerapkan sistem rekomendasi ini pada tahap awal pengembangan produk. Sehingga solusi dari permasalahan ini adalah menggunakan pendekatan *hybrid*. Pendekatan content-based filtering dan collaborative filtering dikombinasikan atau pendekatan *hybrid* akan meberikan hasil rekomendasi yang baik tanpa khawatir dengan keandalan sistem untuk awal pengembangan. 
+Sistem rekomendasi dengan metode *collaborative filtering* memiliki kemampuan untuk menjangkau produk yang beragam, namun akan menjadi masalah jika menerapkan sistem rekomendasi ini pada tahap awal pengembangan produk. Sehingga solusi dari permasalahan ini adalah menggunakan pendekatan *hybrid*. Pendekatan *content-based filtering* dan *collaborative filtering* dikombinasikan atau pendekatan *hybrid* akan memberikan hasil rekomendasi yang baik tanpa khawatir dengan keandalan sistem untuk awal pengembangan. 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/d51d2a22-4051-4696-b243-e013fdca4994"></p>
 <p align="center">Gambar 10. Sistem Rekomendasi Hybrid</p>
