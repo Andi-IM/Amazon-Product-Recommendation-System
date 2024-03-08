@@ -365,7 +365,7 @@ Pengukuran performa dari model sistem rekomendasi bergantung pada jenis sistem r
 
 ### Pengujian Model *Content Based Filtering*
 
-Model ini hanya menggunakan metrik Precision untuk mengetahui seberapa baik perforam model tersebut. Presisi adalah metrik yang biasa digunakan untuk mengevaluasi kinerja model pengelompokan. Metrik ini menghitung rasio antara nilai *ground truth* (nilai sebenarnya) dengan nilai prediksi yang positf. Perhitungan rasio ini dijabarkan melalui rumus di bawah ini:
+Model ini hanya menggunakan metrik *Precision* untuk mengetahui seberapa baik perforam model tersebut. Presisi adalah metrik yang biasa digunakan untuk mengevaluasi kinerja model pengelompokan. Metrik ini menghitung rasio antara nilai *ground truth* (nilai sebenarnya) dengan nilai prediksi yang positf. Perhitungan rasio ini dijabarkan melalui rumus di bawah ini:
 
 $$ Precision = \frac{TP}{TP + FP} $$
 
@@ -388,7 +388,7 @@ Dimana:
 - $F_t$ : Nilai hasil prediksi
 - n: Banyak data
 
-Collaborative Filtering dengan model RecommenderNet memberikan hasil training yang divisualisasikan melalui gambar di bawah ini: 
+*Collaborative Filtering* dengan model RecommenderNet memberikan hasil training yang divisualisasikan melalui gambar di bawah ini: 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/f119f22c-b5e5-49bb-9c0d-ab17bd180667"></p>
 <p align="center">Gambar 11. Hasil Evaluasi Model RecommenderNet</p>
