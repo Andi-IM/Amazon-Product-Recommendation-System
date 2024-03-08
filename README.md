@@ -86,12 +86,12 @@ Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui meto
 
 #### Distribusi produk di setiap kategori
 
-Fitur `category` dipecah menjadi `main_category` dan `sub_cateogry` untuk mempermudah analisis sehingga didapat insight seperti pada Gambar 1 dan 2. 
+Fitur `category` dipecah menjadi `main_category` dan `sub_cateogry` untuk mempermudah analisis sehingga didapat insight seperti pada Gambar 2 dan 3. 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/26574d3a-c31f-43f7-9395-db213734bb3a"></p>
-<p align="center">Gambar 1. Distribusi produk pada kategori utama</p>
+<p align="center">Gambar 2. Distribusi produk pada kategori utama</p>
 
-Dari Gambar 1 diperoleh beberapa insight:
+Dari Gambar 2 diperoleh beberapa insight:
 
 - Tiga kategori teratas adalah `Electronics`, `Computer & Accessories`, dan `Home & Kitchen`. Hal ini memperlihatkan barang-barang tersebut adalah yang terpopuler di antara pelanggan.
 - Jumlah produk di `main categories` lainnya cukup sedikit, menunjukkan bahwa kategori tersebut tidak sepopuler tiga kategori teratas.
@@ -111,9 +111,9 @@ Dari Gambar 2 diperoleh beberapa insight sebagai berikut:
 #### Distribusi rating pelanggan.
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/fbd70f96-5512-4289-9495-5d46b4d8a4a5"></p>
-<p align="center">Gambar 3. Distribusi rating pelanggan</p>
+<p align="center">Gambar 4. Distribusi rating pelanggan</p>
 
-Dari Gambar 3 dapat dilihat bahwa:
+Dari Gambar 4 dapat dilihat bahwa:
 
 - Mayoritas pelanggan memberi rating dari 3-4 dan 4-5, dengan total 1453 ulasan.
 - Terdapat peningkatan nyata dalam jumlah ulasan pada rentang 2-3 dibandingkan dengan rentang 0-1 dan 1-2 yang lebih rendah.
@@ -125,18 +125,18 @@ Dari Gambar 3 dapat dilihat bahwa:
 Distribusi rating berdasarkan kategori utama dan subkategori untuk melihat pendapat pengalaman yang pengguna dapatkan dengan produk-produk pada kategori utama dan sub kategori.
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/5c379d13-542b-4113-bb84-044c37696550"></p>
-<p align="center">Gambar 4. Distribusi rata-rata rating pelanggan di setiap kategori utama</p>
+<p align="center">Gambar 5. Distribusi rata-rata rating pelanggan di setiap kategori utama</p>
 
-Pada Gambar 4 dapat diperoleh informasi:
+Pada Gambar 5 dapat diperoleh informasi:
 
 - Dapat dilihat kategori utama diurutkan berdasarkan rating rata-ratanya.
 - Kategori dengan rating tertinggi adalah `OfficeProducts`, `Toys&Games`, dan `HomeImprovement` dengan rating di atas 4. Ini menyatakan bahwa pelanggan secara umum suka dengan produk yang ditawarkan pada kategori tersebut.
 - Di sisi lain, kategori utama dengan rating rendah ada `Car&Motorbike`, `MusicalInstruments`,  dan `Health&PersonalCare` dengan rating di bawah 4. Ini berarti perlu adanya perbaikan untuk dapat memenuhi ekspetasi pelanggan.
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/8451131e-0387-4503-97f8-d8818b0b76cd"></p>
-<p align="center">Gambar 5. Distribusi rata-rata rating pelanggan di setiap sub kategori</p>
+<p align="center">Gambar 6. Distribusi rata-rata rating pelanggan di setiap sub kategori</p>
 
-Dari Gambar 5 dapat diperoleh informasi bahwa:
+Dari Gambar 6 dapat diperoleh informasi bahwa:
 
 - Dari tabel dapat dilihat rating dari sub kategori dari atas hingga bawah.
 - Produk "tablet", merupakan subkategori teratas dengan rating 4.6 yang berarti pelanggan puas dengan pembeliannya.
@@ -169,9 +169,9 @@ Tabel 1 memberikan informasi bahwa:
 #### Persentase Diskon di Setiap Kategori
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/4bbefbc3-a081-4d60-8cda-a473f214c8ac"></p>
-<p align="center">Gambar 6. Persentase diskon berdasarkan kategori utama</p>
+<p align="center">Gambar 7. Persentase diskon berdasarkan kategori utama</p>
 
-Dari Gambar 6 Dapat dilihat bahwa:
+Dari Gambar 7 Dapat dilihat bahwa:
 
 - Kategori `Toys&games` memiliki permintaan yang cukup tinggi dimana penjual tidak perlu secara signifikan memberikan diskon untuk penjualan produk di kategori ini.
 - `Home&Kitchen` dan `Car&Motorbike` mempunyai rata-rata persentase diskon yang serupa, dengan nilai 40% - 42%. Ini menunjukkan bahwa level kompetisi yang sama dengan sensitivitas harga di kedua kategori tersebut.
@@ -179,7 +179,7 @@ Dari Gambar 6 Dapat dilihat bahwa:
 - Juga menarik untuk dilihat bahwa, `OfficeProducts` dan `Health&PersonalCare` punya rata-rata diskon 12% dan 53%, yang berarti di antara kedua kategori tersebut merupakan rata-rata diskon terendah dan tertinggi. Hal ini menunjukkan bahwa kategori-kategori ini mungkin memiliki tingkat sensitivitas harga tertentu, namun tidak pada tingkat yang sama dengan `HomeImprovement`, `Computers&Accessories`, dan `Electronics`.
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/4bbefbc3-a081-4d60-8cda-a473f214c8ac"></p>
-<p align="center">Gambar 7. Persentase diskon berdasarkan subkategori</p>
+<p align="center">Gambar 8. Persentase diskon berdasarkan subkategori</p>
 
 Dari grafik di atas dilihat bahwa:
 
@@ -192,7 +192,7 @@ Dari grafik di atas dilihat bahwa:
 #### Analisis Sentimen
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/a84bc75d-6740-4d28-b39d-4c71b024f36c"></p>
-<p align="center">Gambar 8. Hasil analisis sentimen dari review produk</p>
+<p align="center">Gambar 9. Hasil analisis sentimen dari review produk</p>
 
 Secara garis besar review produk yang diberikan oleh pelanggan positif, namun bukan berarti rating yang tinggi berimplikasi pada review yang baik seperti yang ditampilkan pada tabel 2.
 
@@ -284,12 +284,12 @@ Sistem rekomendasi dengan model *collaborative filtering* memiliki kelebihan den
 Pada metode rekomendasi *collaborative filtering*, algoritma berfokus pada pendapat komunitas pengguna. Pada *user-based collaborative filtering*, algoritma akan melihat kesamaan selera pengguna. Katakanlah Galih dan Ratna memberikan rating tertinggi untuk sejumlah film action. Jika Galih menyukai film The Avengers, Ratna juga kemungkinan akan menyukai film tersebut. 
 
 <p align="center"><img src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/academy/dos:4234dba104aca84b9b1f2affdb625b8c20210912135018.png"></p>
-<p align="center">Gambar 9. User-based Collaborative Filtering</p>
+<p align="center">Gambar 10. User-based Collaborative Filtering</p>
 
 Sistem rekomendasi dengan metode *collaborative filtering* memiliki kemampuan untuk menjangkau produk yang beragam, namun akan menjadi masalah jika menerapkan sistem rekomendasi ini pada tahap awal pengembangan produk. Sehingga solusi dari permasalahan ini adalah menggunakan pendekatan *hybrid*. Pendekatan *content-based filtering* dan *collaborative filtering* dikombinasikan atau pendekatan *hybrid* akan memberikan hasil rekomendasi yang baik tanpa khawatir dengan keandalan sistem untuk awal pengembangan. 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/d51d2a22-4051-4696-b243-e013fdca4994"></p>
-<p align="center">Gambar 10. Sistem Rekomendasi Hybrid</p>
+<p align="center">Gambar 11. Sistem Rekomendasi Hybrid</p>
 
 Sistem rekomendasi akan memfilter berdasarkan produk yang pelanggan suka dan mengurutkannya berdasarkan rating yang diberikan. Kedua model akan diuji dengan data produk sampel dengan id `B07JW9H4J1` untuk dilihat kemampuannya seperti yang dapat dilihat pada Tabel 3 berikut ini.
 
@@ -391,7 +391,7 @@ Dimana:
 *Collaborative Filtering* dengan model RecommenderNet memberikan hasil training yang divisualisasikan melalui gambar di bawah ini: 
 
 <p align="center"><img src="https://github.com/Andi-IM/Amazon-Product-Recommendation-System/assets/21165698/f119f22c-b5e5-49bb-9c0d-ab17bd180667"></p>
-<p align="center">Gambar 11. Hasil Evaluasi Model RecommenderNet</p>
+<p align="center">Gambar 12. Hasil Evaluasi Model RecommenderNet</p>
 
 Dengan epoch sebanyak 100, model ini memberikan nilai error akhir 0.3 untuk training dan 0.19 untuk test. 
 
